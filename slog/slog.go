@@ -1,4 +1,4 @@
-package logger
+package slog
 
 import (
 	"context"
