@@ -69,7 +69,7 @@ func (h *PrettyHandler) Handle(ctx context.Context, r slog.Record) error {
 	frame, _ := fs.Next()
 	source["file"] = filepath.Base(frame.File)
 	source["line"] = frame.Line
-	source["func"] = color.CyanString(frame.Function)
+	source["func"] = filepath.Base(color.CyanString(frame.Function))
 
 	// Format the timestamp
 	timeStr := color.GreenString(r.Time.Format(time.DateTime))
